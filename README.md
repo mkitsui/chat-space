@@ -11,7 +11,7 @@
 - belongs_to :group
 - belongs_to :user
 
-
+<br />
 
 ## usersテーブル
 
@@ -25,7 +25,7 @@
 - has_many :messages
 - has_many :members
 
-
+<br />
 
 ## groupsテーブル
 
@@ -41,7 +41,7 @@
 - has_many :members
 - has_many :messages
 
-
+<br />
 
 ## membersテーブル
 
