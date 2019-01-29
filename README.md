@@ -23,7 +23,6 @@
 ### Association
 - has_many :groups,through: members
 - has_many :messages
-- has_many :members
 
 <br />
 
@@ -38,7 +37,6 @@
 
 ### Association
 - has_many :users,through: members
-- has_many :members
 - has_many :messages
 
 <br />
