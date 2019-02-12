@@ -1,0 +1,28 @@
+.side_bar
+  = render 'shared/side_bar'
+
+.chat_side
+  .chat
+    .chat__group--name
+      sample
+      %a.icon.edit{:href => ""}
+        Edit
+    .chat__members-name
+      Members: mkitsui
+    .messages
+      .upper-message
+        .upper-message__user-name
+          mkitsui
+        .upper-message__date
+          2019/2/11
+      .lower-message
+        .lower-message__content
+          message
+    .form
+      %form
+        %input.form__message{:placeholder => " type a message"}
+          .form__mask
+            %label.form__mask__image
+              %a.icon.fa-image
+              %input.hidden{type: 'file'}
+        %input.form__submit{type: 'submit', value: 'Send'}
