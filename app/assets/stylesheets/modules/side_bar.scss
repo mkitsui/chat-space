@@ -1,0 +1,39 @@
+.side-bar {
+  background-color: $side_blue_light;
+  bottom: 0;
+  color: $white;
+  float: left;
+  font-size: 16px;
+  height: 100vh;
+  position: relative;
+  width: 300px;
+
+  .header {
+    box-sizing: border-box;
+    width: 300px;
+    &__user-info {
+      background-color: $side_blue_dark;
+      font-weight: bold;
+      padding: 35px 20px 40px;
+    }
+    .fa-edit, .fa-cog {
+      color: $white;
+      font-family: 'Font Awesome 5 Free';
+      float: right;
+      padding-right: 10px;
+      text-decoration: none;
+    }
+  }
+
+  .groups {
+    margin: 20px 20px 0px;
+    &__name {
+      font-size: 15px;
+    }
+    &__comment {
+      font-size: 11px;
+      padding: 5px 0px 40px;
+    }
+  }
+}
+
