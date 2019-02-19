@@ -4,10 +4,14 @@
       = current_user.name
       = link_to edit_user_path(current_user) do
         = fa_icon "cog", class: "icon"
-      %a.icon.fa-edit{:href => ""}
+      = link_to new_group_path do
+        = fa_icon "edit", class: "icon"
       %link{:crossorigin => "anonymous", :href => "https://use.fontawesome.com/releases/v5.7.1/css/all.css", :integrity => "sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr", :rel => "stylesheet"}/
   .groups
-    .groups__name
-      sample
-    .groups__comment
-      Good bye world
+    - current_user.groups.each do |group|
+      .group
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__comment
+            メッセージはまだありません。
