@@ -1,22 +1,20 @@
 .side-bar {
-  background-color: $side_blue_light;
   bottom: 0;
   color: $white;
   float: left;
   font-size: 16px;
-  height: 100vh;
-  position: relative;
   width: 300px;
 
   .header {
+    background-color: $side_blue_dark;
     box-sizing: border-box;
     width: 300px;
+
     &__user-info {
-      background-color: $side_blue_dark;
       font-weight: bold;
       padding: 35px 20px 40px;
     }
-    .fa-edit, .fa-cog {
+    .icon {
       color: $white;
       font-family: 'Font Awesome 5 Free';
       float: right;
@@ -26,14 +24,24 @@
   }
 
   .groups {
-    margin: 20px 20px 0px;
-    &__name {
-      font-size: 15px;
-    }
-    &__comment {
-      font-size: 11px;
-      padding: 5px 0px 40px;
+    background-color: $side_blue_light;
+    height: calc(100vh - 100px);
+    overflow: scroll;
+    padding: 0 20px;
+    .group {
+      box-sizing: border-box;
+      padding: 20px 0 40px;
+      &__name {
+        color: white;
+        font-size: 15px;
+        text-decoration: none;
+      }
+      &__comment {
+        color: white;
+        font-size: 11px;
+        margin-top: 5px;
+        text-decoration: none;
+      }
     }
   }
 }
-
