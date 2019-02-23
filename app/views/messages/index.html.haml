@@ -10,19 +10,12 @@
     .chat__members-name
       Members: mkitsui
     .messages
-      .upper-message
-        .upper-message__user-name
-          mkitsui
-        .upper-message__date
-          2019/2/11
-      .lower-message
-        .lower-message__content
-          message
+      = render @messages
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
         .form__mask
           = f.label :image, class: 'form__mask__image' do
-            = fa_icon 'picture-o', class: 'icon'
+            = fa_icon 'image', class: 'icon'
             = f.file_field :image, class: 'hidden'
         = f.submit 'Send', class: 'form__submit'
