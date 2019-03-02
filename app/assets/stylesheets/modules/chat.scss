@@ -31,6 +31,7 @@
     .messages {
       background-color: #FAFAFA;
       box-sizing: border-box;
+      overflow: scroll;
       padding: 46px 40px 0;
       height: calc(100vh - 190px);
       .upper-message {
@@ -77,10 +78,9 @@
         line-height: 50px;
         padding-right: 20px;
       }
-      .fa-image {
+      .fa_icon {
         color: side_blue_light;
         font-family: 'Font Awesome 5 Free';
-        float: right;
         text-decoration: none;
       }
       .hidden {
