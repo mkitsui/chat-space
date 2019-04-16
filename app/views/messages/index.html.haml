@@ -4,11 +4,14 @@
 .chat_side
   .chat
     .chat__group--name
-      sample
-      %a.icon.edit{:href => ""}
-        Edit
+      = @group.name
+      %a.icon.edit
+        =link_to "Edit", edit_group_path(@group),class: 'chat-main__header--group--edit'
     .chat__members-name
-      Members: mkitsui
+      Member：
+      - @group.users.each do |user|
+        %member= current_user.name
+        %member= user.name
     .messages
       = render @messages
     .form
@@ -19,4 +22,3 @@
             = fa_icon 'image', class: 'icon'
             = f.file_field :image, class: 'hidden'
         = f.submit 'Send', class: 'form__submit'
-
