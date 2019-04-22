@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function() {
   function buildHTML(message){
     var image = message.image.url ? `<img src='${message.image.url}'> ` : ' '
-    var html = `<div class="message">
+    var html = `<div class = "message" data-id=${message.id}>
                   <div class="upper-message">
                     <div class="upper-message__user-name">
                       ${message.user_name}
@@ -40,15 +40,13 @@ $(document).on('turbolinks:load', function() {
       alert("error");
     })
   })
-
-  var auto_reload = setInterval(function() {
+  var interval = setInterval(function() {
     // setInterval:一定時間毎に繰り返し処理してくれる
     if (location.href.match(/\/groups\/\d+\/messages/)){
       // が含まれているURLに画面遷移する
       var url = $(location).attr('pathname');
        // 現在のページのURLのパス名
       var message_id = $('.message').last().data('id');
-
       $.ajax({
         url: url,
         type: 'GET',
@@ -58,9 +56,9 @@ $(document).on('turbolinks:load', function() {
         .done(function(data){
           data.forEach(function(message){
             var html = buildHTML(message);
-            $(".chat-main__body").append(html);
+            $(".messages").append(html);
           })
-          $(".chat-main__body").animate({scrollTop:$('.chat_main-body')});
+          $(".messages").animate({scrollTop:$(".messages")[0].scrollHeight});
         })
         .fail(function(){
           alert('自動更新に失敗しました');
