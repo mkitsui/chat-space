@@ -10,7 +10,6 @@
     .chat__members-name
       Member：
       - @group.users.each do |user|
-        %member= current_user.name
         %member= user.name
     .messages
       = render @messages
