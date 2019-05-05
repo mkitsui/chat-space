@@ -46,7 +46,10 @@ $(document).on('turbolinks:load', function() {
       // が含まれているURLに画面遷移する
       var url = $(location).attr('pathname');
        // 現在のページのURLのパス名
-      var message_id = $('.message').last().data('id');
+      var message_id = 0;
+      if ($('.message')[0]){
+        message_id = $('.message').last().data('id');
+      }
       $.ajax({
         url: url,
         type: 'GET',
