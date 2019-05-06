@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
       format.html
       format.json {
         if params[:id] != 'undefined'
-          @new_messages = Message.where('id > ?and group_id = ?', params[:id],params[:group_id])
+          @new_messages = Message.where('id > ? and group_id = ?', params[:id],params[:group_id])
         end
       }
     end
